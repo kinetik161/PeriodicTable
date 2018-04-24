@@ -1,0 +1,18 @@
+AppBundle\Entity\Elements:
+    type: entity
+    table: elements
+    fields:
+        id:
+            id: true
+            type: integer
+            generator:
+                strategy: IDENTITY
+        element:
+            type: string
+            length: 250
+        name:
+            type: string
+            length: 1024
+        namerus:
+            type: string
+            length: 16384
