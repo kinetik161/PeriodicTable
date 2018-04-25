@@ -11,9 +11,18 @@ class DefaultController extends Controller
 
     public function indexAction(Request $request)
     {
-        $elenents=$this->getDoctrine()->getRepository('AppBundle:Elements')->findAll();
+        $elements=$this->getDoctrine()->getRepository('AppBundle:Elements')->findAll();
         return $this->render('default/index.html.twig', [
-            'elements' =>$elenents,
+            'elements' =>$elements,
         ]);
     }
+    public function getAction($id)
+    {
+        $elements=$this->getDoctrine()->getRepository('AppBundle:Elements')->findBy(['id'=>$id]);
+        $property=$this->getDoctrine()->getRepository('AppBundle:Properties')->findBy(['elements'=>$id]);
+        return $this->render('default/get.html.twig', ['property'=>$property,
+            'elements'=>$elements
+            ]);
+    }
+
 }

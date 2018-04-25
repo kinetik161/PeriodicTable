@@ -15,6 +15,24 @@ class Elements
     private $element;
     private $name;
     private $namerus;
+    private $properties;
+
+    /**
+     * @return mixed
+     */
+    public function getProperties()
+    {
+        return $this->properties;
+    }
+
+    /**
+     * @param mixed $properties
+     */
+    public function setProperties($properties)
+    {
+        $this->properties = $properties;
+    }
+
 
     /**
      * @return mixed

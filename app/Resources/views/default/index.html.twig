@@ -1,36 +1,127 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{% for item in elements %}
-<p> {{ item.id }} - {{ item.getNamerus() }}</p>
-{% endfor %}
+    <table width="100%">
+        <colgroup>
+            <col class="grey">
+            <col class="red">
+            <col class="blue" >
+        </colgroup>
+        <tr><th></th><th>Group<br>1<br>1A</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>18<br>8A</th></tr>
+        <tr>
+            <th width="80">1</th>
+            {% for item in elements %}
+                {% if item.getId()==1 %}
+                    <td width="80" align="center">
+                        <a href="{{ path('elements_propertis_get', { 'id': item.id }) }}">{{ item.getId() }}<br>{{ item.getElement() }}<br>{{ item.getName() }} </a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+            <th>2<br>2A</th>
+            <th colspan= "10">
+            <th>13<br>3A</th>
+            <th>14<br>4A</th>
+            <th>15<br>5A</th>
+            <th>16<br>6A</th>
+            <th>17<br>7A</th>
+            {% for item in elements %}
+                {% if item.getId()==2 %}
+                    <td width="80" align="center">
+                        <a href="{{ path('elements_propertis_get', { 'id': item.id }) }}">{{ item.getId() }}<br>{{ item.getElement() }}<br>{{ item.getName() }} </a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>2</th>
+            {% for item in elements %}
+                {% if (item.getId()>2) and (item.getId()<5) %}
+                    <td width="80" align="center">
+                        <a href="{{ path('elements_propertis_get', { 'id': item.id }) }}">{{ item.getId() }}<br>{{ item.getElement() }}<br>{{ item.getName() }} </a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+            <th colspan = "10"> </th>
+            {% for item in elements %}
+                {% if (item.getId()>4) and (item.getId()<11) %}
+                    <td width="80" align="center">
+                        <a href="{{ path('elements_propertis_get', { 'id': item.id }) }}">{{ item.getId() }}<br>{{ item.getElement() }}<br>{{ item.getName() }} </a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>3</th>
+            {% for item in elements %}
+                {% if (item.getId()>10) and (item.getId()<13) %}
+                    <td width="80" align="center">
+                        <a href="{{ path('elements_propertis_get', { 'id': item.id }) }}">{{ item.getId() }}<br>{{ item.getElement() }}<br>{{ item.getName() }} </a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+            <th>3<br>3B</th>
+            <th>4<br>4B</th>
+            <th>5<br>5B</th>
+            <th>6<br>6B</th>
+            <th>7<br>7B</th>
+            <th>8</th>
+            <th>9<br>8B</th>
+            <th>10</th>
+            <th>11<br>1B</th>
+            <th>12<br>2B</th>
+            {% for item in elements %}
+                {% if (item.getId()>12) and (item.getId()<19) %}
+                    <td width="80" align="center">
+                        <a href="{{ path('elements_propertis_get', { 'id': item.id }) }}">{{ item.getId() }}<br>{{ item.getElement() }}<br>{{ item.getName() }} </a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>4</th>
+            {% for item in elements %}
+                {% if (item.getId()>18)and (item.getId()<37) %}
+                    <td width="80" align="center">
+                        <a href="{{ path('elements_propertis_get', { 'id': item.id }) }}">{{ item.getId() }}<br>{{ item.getElement() }}<br>{{ item.getName() }} </a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>5</th>
+            {% for item in elements %}
+                {% if (item.getId()>36) and (item.getId()<55) %}
+                    <td width="80" align="center">
+                        <a href="{{ path('elements_propertis_get', { 'id': item.id }) }}">{{ item.getId() }}<br>{{ item.getElement() }}<br>{{ item.getName() }} </a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>6</th>
+            {% for item in elements %}
+                {% if (item.getId()>54) and (item.getId()<57) %}
+                    <td width="80" align="center">
+                        <a href="{{ path('elements_propertis_get', { 'id': item.id }) }}">{{ item.getId() }}<br>{{ item.getElement() }}<br>{{ item.getName() }} </a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+            {% for item in elements %}
+                {% if (item.getId()>70) and (item.getId()<87) %}
+                    <td width="80" align="center">
+                        <a href="{{ path('elements_propertis_get', { 'id': item.id }) }}">{{ item.getId() }}<br>{{ item.getElement() }}<br>{{ item.getName() }} </a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    </table>
 {% endblock %}
 
 {% block stylesheets %}
 <style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-    h1 { font-size: 36px; }
-    h2 { font-size: 21px; margin-bottom: 1em; }
-    p { margin: 0 0 1em 0; }
-    a { color: #0000F0; }
-    a:hover { text-decoration: none; }
-    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-    #container { padding: 2em; }
-    #welcome, #status { margin-bottom: 2em; }
-    #welcome h1 span { display: block; font-size: 75%; }
-    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-    #icon-book { display: none; }
-
-    @media (min-width: 768px) {
-        #wrapper { width: 80%; margin: 2em auto; }
-        #icon-book { display: inline-block; }
-        #status a, #next a { display: block; }
-
-        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+    td {
+        text-align:center;
+        background-color:rgba(0,0,255,.25);;
     }
 </style>
 {% endblock %}

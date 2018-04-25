@@ -1,0 +1,22 @@
+AppBundle\Entity\Properties:
+    type: entity
+    table: properties
+    fields:
+        id:
+            id: true
+            type: integer
+            generator:
+                strategy: IDENTITY
+        property:
+            type: string
+            length: 1024
+        value:
+            type: string
+            length: 16384
+    manyToOne:
+            elements:
+                targetEntity: AppBundle\Entity\Elements
+                inversedBy: properties
+                joinColumn:
+                    name: element_id
+                    referencedColumnName: id

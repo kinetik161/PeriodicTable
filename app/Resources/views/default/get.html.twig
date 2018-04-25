@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for element in elements %}
+        <p>{{ element.getElement() }}</p>
+        <p>{{element.getName() }}</p>
+    {% endfor %}
+    {% for properties in property %}
+        <p>{{ properties.getProperty }} - {{ properties.getValue() }} </p>
+    {% endfor %}
+
+{% endblock %}

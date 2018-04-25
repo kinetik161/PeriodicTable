@@ -16,3 +16,7 @@ AppBundle\Entity\Elements:
         namerus:
             type: string
             length: 16384
+    oneToMany:
+            properties:
+                targetEntity: AppBundle\Entity\Properties
+                mappedBy: elements
